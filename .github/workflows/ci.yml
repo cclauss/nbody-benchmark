@@ -25,3 +25,11 @@ jobs:
     - run: time python src/nbody.py 10000
     - run: time python src/nbody.py 0
     - run: time python src/nbody.py -1
+    - run: |
+        values=(1 10 100 1000 10000 0 -1)
+        # Loop through each value and run the benchmark script
+        for value in "${values[@]}"; do
+          echo "time python src/nbody.py $value"
+          time python src/nbody.py "$value"
+          echo "---------------------------"
+        done
