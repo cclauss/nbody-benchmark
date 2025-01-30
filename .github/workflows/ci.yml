@@ -18,10 +18,10 @@ jobs:
     - uses: astral-sh/ruff-action@v3
       with:
         args: check --exit-zero --output-format=full --select=ALL --statistics
-    - run: python src/* 1
-    - run: python src/* 10
-    - run: python src/* 100
-    - run: python src/* 1000
-    - run: python src/* 10000
-    - run: python src/* 0
-    - run: python src/* -1
+    - run: python src/nbody.py 1
+    - run: python src/nbody.py 10
+    - run: python src/nbody.py 100
+    - run: python src/nbody.py 1000
+    - run: python src/nbody.py 10000
+    - run: python src/nbody.py 0
+    - run: python src/nbody.py -1
