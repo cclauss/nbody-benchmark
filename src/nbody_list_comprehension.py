@@ -2,13 +2,18 @@
 
 import sys 
 
-def combinations(l):
+def old_combinations(l):
     result = []
     for x in range(len(l) - 1):
         ls = l[x+1:]
         for y in ls:
             result.append((l[x],y))
     return result
+
+def combinations(items):
+    result = []
+    for i, item in enumerate(items[:-1]):
+        result.extend((item, y) for y in items[x+1:])
 
 PI = 3.14159265358979323
 SOLAR_MASS = 4 * PI * PI
