@@ -17,9 +17,11 @@ jobs:
         python-version: 3.x
     - uses: astral-sh/ruff-action@v3
       with:
-        args: check --exit-zero
-    - run: python src/* 5
-    - run: python src/* 10
+        args: check --exit-zero --select=ALL --statistics | sort -k2
     - run: python src/* 1
+    - run: python src/* 10
+    - run: python src/* 100
+    - run: python src/* 1000
+    - run: python src/* 10000
     - run: python src/* 0
     - run: python src/* -1
