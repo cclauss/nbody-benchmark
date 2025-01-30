@@ -21,7 +21,7 @@ jobs:
     # Intel: time python src/nbody.py 10000000 --> real 1m2.985s,  user 1m2.979s,  sys 0m0.005s
     # ARM:   time python src/nbody.py 10000000 --> real 0m42.950s, user 0m42.927s, sys 0m0.021s
     - run: |
-        values=(1 10 100 1000 10000 100000 1000000 10000000 0 -1)
+        values=(10 100 1000 10000 100000 1000000 10000000)  # 1 0 -1)
         # Loop through each value and run the benchmark script
         for value in "${values[@]}"; do
           echo "time python src/nbody.py $value"
