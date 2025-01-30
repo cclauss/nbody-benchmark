@@ -12,7 +12,7 @@ def old_combinations(l):
 
 def combinations(items):
     # return [(x, y) for i, x in enumerate(items[:-1]) for y in items[i+1:]]
-    return ((x, y) for i, x in enumerate(items[:-1]) for y in items[i+1:])
+    return tuple((x, y) for i, x in enumerate(items[:-1]) for y in items[i+1:])
 
 PI = 3.14159265358979323
 SOLAR_MASS = 4 * PI * PI
