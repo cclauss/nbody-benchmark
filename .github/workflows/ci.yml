@@ -27,5 +27,7 @@ jobs:
           echo "time python src/nbody.py $value"
           time python src/nbody.py "$value"
           sleep 1  # Allow time to print its output
+          time python src/nbody_list_comprehension.py  "$value"
+          sleep 1  # Allow time to print its output
           echo "---------------------------"
         done
