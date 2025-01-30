@@ -18,4 +18,8 @@ jobs:
     - uses: astral-sh/ruff-action@v3
       with:
         args: check --exit-zero
-    - run: python src/*
+    - run: python src/* 5
+    - run: python src/* 10
+    - run: python src/* 1
+    - run: python src/* 0
+    - run: python src/* -1
