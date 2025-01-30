@@ -18,18 +18,12 @@ jobs:
     - uses: astral-sh/ruff-action@v3
       with:
         args: check --exit-zero --output-format=full --select=ALL --statistics
-    - run: time python src/nbody.py 1
-    - run: time python src/nbody.py 10
-    - run: time python src/nbody.py 100
-    - run: time python src/nbody.py 1000
-    - run: time python src/nbody.py 10000
-    - run: time python src/nbody.py 0
-    - run: time python src/nbody.py -1
     - run: |
-        values=(1 10 100 1000 10000 0 -1)
+        values=(1 10 100 1000 10000 100000 1000000 10000000 0 -1)
         # Loop through each value and run the benchmark script
         for value in "${values[@]}"; do
           echo "time python src/nbody.py $value"
           time python src/nbody.py "$value"
+          sleep 1  # Allow time to print its output
           echo "---------------------------"
         done
